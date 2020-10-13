@@ -1,4 +1,4 @@
-# importing base64, json, requests and urllib.parse
+# importing base64, requests and urllib.parse
 import base64
 import requests
 import urllib.parse
@@ -60,7 +60,7 @@ while True:
             print("Error code: " + str(r.status_code))
             return r.status_code
 
-
+    # get Authtoken
     token = AccessToken(clientId, clientSecret)
     # to see what Authtoken you get use: "print(token)"
 
@@ -93,6 +93,7 @@ while True:
     if type(n_genres) == str:
         n_genres = 3
 
+    # get search results
     search = Search(token, artist)
 
     # stop the program if search gives an error code
